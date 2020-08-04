@@ -1,6 +1,6 @@
 resource "aws_security_group" "sg_vpc_test" {
     name = "sg_vpc_test"
-    vpc_id = "${aws_vpc.vpc_test.id}"
+    vpc_id = aws_vpc.vpc_test.id
 
     ingress {
         from_port   = 22
