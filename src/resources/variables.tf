@@ -11,5 +11,5 @@ variable "project" {
 }
 
 variable "team" {
-    default = "devops"
+    default = "infra"
 }
