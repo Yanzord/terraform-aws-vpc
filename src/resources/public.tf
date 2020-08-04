@@ -19,7 +19,7 @@ resource "aws_route_table" "vpc_test_route_table" {
 
     route {
         ipv6_cidr_block        = "::/0"
-        egress_only_gateway_id = aws_egress_only_internet_gateway.infrapoc.id
+        egress_only_gateway_id = aws_egress_only_internet_gateway.vpc_test_egress_only.id
     }
 
     tags = {
@@ -35,7 +35,7 @@ resource "aws_main_route_table_association" "vpc_test_main_rt" {
     route_table_id = aws_route_table.vpc_test_route_table.id
 }
 
-resource "aws_egress_only_internet_gateway" "infrapoc" {
+resource "aws_egress_only_internet_gateway" "vpc_test_egress_only" {
     vpc_id = aws_vpc.vpc_test.id
 }
 
